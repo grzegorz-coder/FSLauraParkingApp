@@ -1,7 +1,9 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
-const testActions = require('../actions/api/test')
 
-router.get('/', testActions.homepage)
+const parkingChangesActions = require('../actions/api/parkingChanges');
+
+router.get('/', parkingChangesActions.saveParkingApp);
     
 module.exports = router;
+

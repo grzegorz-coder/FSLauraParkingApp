@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 const {port} = require('./config');
-const router = require('./routes/Api');
+const apiRouter = require('./routes/api');
 
+require('./db/mongoose');
 //routers
-const apiRouter = router
-app.use('/api', apiRouter)
+app.use('/', apiRouter);
 
 //server
 app.listen(port, function() {
