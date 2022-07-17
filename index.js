@@ -3,10 +3,11 @@ const app = express();
 const {port} = require('./config');
 const apiRouter = require('./routes/api');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
-//parsers
+
+//pasery
 // Content-type: application/JSON
-
 app.use(bodyParser.json());
 
 //db
@@ -18,4 +19,8 @@ app.use('/api/', apiRouter);
 //server
 app.listen(port, function() {
     console.log('serwer słucha')
-})
+});
+
+//fix cors
+app.use(cors());
+
