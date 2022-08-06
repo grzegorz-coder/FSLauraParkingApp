@@ -10,6 +10,9 @@ const cors = require('cors');
 // Content-type: application/JSON
 app.use(bodyParser.json());
 
+//fix cors
+app.use(cors());
+
 //db
 require('./db/mongoose');
 
@@ -21,6 +24,5 @@ app.listen(port, function() {
     console.log('serwer słucha')
 });
 
-//fix cors
-app.use(cors());
+
 
